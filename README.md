@@ -1,6 +1,6 @@
 # cms-ars-3.1-eks-cis-cluster-overlay
 
-InSpec profile to validate the secure configuration of AWS EKS, against [CIS](https://www.cisecurity.org/cis-benchmarks/)'s CIS Amazon Elastic Kubernetes Service (EKS) Benchmark version 1.0.1.
+InSpec profile to validate the secure configuration of AWS EKS, against [CIS](https://www.cisecurity.org/cis-benchmarks/)'s CIS Amazon Elastic Kubernetes Service (EKS) Benchmark version 1.0.1 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as Moderate.
 
 The baseline includes tests that must be executed against the Kubernetes API and tests that must be executed against the underlying nodes over SSH. This profile handles only the cluster tests, and is intended to be run alongside the [EKS CIS Node Baseline profile](https://github.com/mitre/eks-cis-node-baseline).
 
@@ -73,7 +73,7 @@ allowlist_cidr_blocks:
 Executing the profile by downloading it to the runner:
 
 ```
-git clone https://github.com/mitre/eks-cis-cluster-baseline.git
+git clone https://github.com/cmsgov/cms-ars-3.1-moderate-eks-cis-cluster-overlay.git
 cd eks-cis-cluster-baseline
 inspec exec . --input-file <path_to_your_input_file/name_of_your_input_file.yml> --reporter cli json:node1results.json
 ```
@@ -81,7 +81,7 @@ inspec exec . --input-file <path_to_your_input_file/name_of_your_input_file.yml>
 Executing the profile by executing it from this GitHub repository:
 
 ```
-inspec exec https://github.com/mitre/eks-cis-cluster-baseline/archive/main.tar.gz --input-file <path_to_your_input_file/name_of_your_input_file.yml> --reporter cli json:cluster-results.json
+inspec exec https://github.com/cmsgov/cms-ars-3.1-moderate-eks-cis-cluster-overlay/archive/main.tar.gz --input-file <path_to_your_input_file/name_of_your_input_file.yml> --reporter cli json:cluster-results.json
 ```
 
 ## Running This Baseline from a local Archive copy
@@ -93,18 +93,18 @@ If your runner is not always expected to have direct access to GitHub, use the f
 ```
 mkdir profiles
 cd profiles
-git clone https://github.com/mitre/eks-cis-cluster-baseline.git
-inspec archive eks-cis-cluster-baseline
+git clone https://github.com/cmsgov/cms-ars-3.1-moderate-eks-cis-cluster-overlay.git
+inspec archive cms-ars-3.1-moderate-eks-cis-cluster-overlay
 sudo inspec exec <archive name> --input-file <path_to_your_input_file/name_of_your_input_file.yml> --reporter cli json:cluster-results.json
 ```
 
 For every successive run, follow these steps to always have the latest version of this baseline and dependent profiles:
 
 ```
-cd eks-cis-cluster-baseline
+cd cms-ars-3.1-moderate-eks-cis-cluster-overlay
 git pull
 cd ..
-inspec archive eks-cis-cluster-baseline --overwrite
+inspec archive cms-ars-3.1-moderate-eks-cis-cluster-overlay --overwrite
 sudo inspec exec <archive name> --input-file <path_to_your_input_file/name_of_your_input_file.yml> --reporter cli json:cluster-results.json
 ```
 
@@ -126,7 +126,7 @@ The JSON InSpec results file may also be loaded into a **[full heimdall server](
 
 ## Contributing and Getting Help
 
-To report a bug or feature request, please open an [issue](https://github.com/mitre/eks-cis-baseline/issues/new).
+To report a bug or feature request, please open an [issue](https://github.com/cmsgov/cms-ars-3.1-moderate-eks-cis-cluster-overlay/issues/new).
 
 ### NOTICE
 
