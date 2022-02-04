@@ -1,4 +1,4 @@
-# cms-ars-3.1-eks-cis-cluster-overlay
+# cms-ars-3.1-moderate-eks-cis-cluster-overlay
 
 InSpec profile to validate the secure configuration of AWS EKS, against [CIS](https://www.cisecurity.org/cis-benchmarks/)'s CIS Amazon Elastic Kubernetes Service (EKS) Benchmark version 1.0.1 (Cluster requirements) tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as Moderate.
 
